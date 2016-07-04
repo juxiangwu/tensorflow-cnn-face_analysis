@@ -3,6 +3,8 @@ import os
 import numpy as np
 import scipy.ndimage as nd
 
+y_dataset = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+
 def getBestShift(img):
     cy,cx = nd.measurements.center_of_mass(img)
 
@@ -32,10 +34,11 @@ def readimage(path):
             image = path + dataList[dataCount] + '/' + imageList[imageCount]
             feed = doflat(image)
             x.append(feed)
-            # y.append(y_dataset[int(dataList[dataCount][-2:])-1])
+            y.append(y_dataset[int(dataList[dataCount][-2:])-1])
+            print y
 
     print 'finish read image'
-    return x
+    return x, y
 
 def doflat(path):
     img = cv2.imread(path)
