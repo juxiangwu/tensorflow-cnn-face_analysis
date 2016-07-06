@@ -41,11 +41,11 @@ def saveLearning(sess):
 X = tf.placeholder("float", [None, 28, 28, 3])
 Y = tf.placeholder("float", [None, 4])
 
-w = init_weights([3, 3, 3, 32])       # 3x3x3 conv, 32 outputs
-w2 = init_weights([3, 3, 32, 64])     # 3x3x32 conv, 64 outputs
-w3 = init_weights([3, 3, 64, 128])    # 3x3x64 conv, 128 outputs
-w4 = init_weights([128 * 4 * 4, 625]) # FC 128 * 4 * 4 inputs, 625 outputs
-w_o = init_weights([625, 4])         # FC 625 inputs, 4 outputs (labels)
+w = init_weights([3, 3, 3, 64])
+w2 = init_weights([3, 3, 64, 128])
+w3 = init_weights([3, 3, 128, 800])
+w4 = init_weights([800 * 4 * 4, 625])
+w_o = init_weights([625, 4])
 
 p_keep_conv = tf.placeholder("float")
 p_keep_hidden = tf.placeholder("float")

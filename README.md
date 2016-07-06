@@ -22,29 +22,14 @@ img디렉터리에 당신이 가지고 있는 이미지를 넣어 테스트를 �
 
 ### 소스를 수정하지 않고 테스트 하는 방법
 
-각각의 이미지 디렉터리 1, 2, 3, 4에 자신이 원하는 이미지를 넣고<br>
+각각의 이미지 디렉터리 하위 디렉터리 1, 2, 3, 4(하위 디렉터리는 숫자로 해주세요)안에 자신이 원하는 이미지를 넣고<br>
 cps 디렉터리안의 파일을 전부 삭제 해 주시고 실행 해 주세요   
 
 ### 소스를 수정하여 테스트 하는 방법
 
 당신이 분류할 사진 수를 늘리거나 줄일 경우 수정해야할 소스는<br>
-test.py, imageread.py, model.py 총 3개 입니다.<br>
+imageread.py, model.py 총 2개 입니다.<br>
 
-#### test.py
-
-```
-if(sess.run(model.predict_op, feed_dict={model.X: [data], model.p_keep_conv: 1, model.p_keep_hidden: 1})[0]) == 0:
-    print "picture 1"
-
-elif(sess.run(model.predict_op, feed_dict={model.X: [data], model.p_keep_conv: 1, model.p_keep_hidden: 1})[0]) == 1:
-    print "picture 2"
-
-elif (sess.run(model.predict_op, feed_dict={model.X: [data], model.p_keep_conv: 1 , model.p_keep_hidden: 1})[0]) == 2:
-    print "picture 3"
-
-elif (sess.run(model.predict_op, feed_dict={model.X: [data], model.p_keep_conv: 1, model.p_keep_hidden: 1})[0]) == 3:
-    print "picture 4"
-```
 
 #### imageread.py
 ```
