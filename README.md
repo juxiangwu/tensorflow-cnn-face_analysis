@@ -8,7 +8,7 @@
 # How to use
 
 traning.py는 모델을 트레이닝 하는 코드이며<br>
-test.py는 학습된 모델을 불러와 opencv로 cam 프레임을 받아와 분석하는 코드입니다.
+test.py는 학습된 모델을 불러와 opencv로 cam 프레임을 받은뒤 분석하는 코드입니다.
 
 ```
 $ python traning.py
