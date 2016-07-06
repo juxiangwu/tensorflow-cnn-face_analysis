@@ -1,0 +1,5 @@
+*.jpg
+*.JPG
+cps/checkpoint
+*.ckpt
+*.ckpt.meta
