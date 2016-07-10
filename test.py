@@ -3,7 +3,7 @@ import tensorflow as tf
 
 import model
 
-face_cascade = cv2.CascadeClassifier('/home/fuz/opencv/data/haarcascades/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('frontalFace/haarcascade_frontalface_alt.xml')
 cap= cv2.VideoCapture(0)
 
 # Launch the graph in a session
@@ -15,7 +15,7 @@ with tf.Session() as sess:
     while(True):
         ret, img = cap.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray, 2, 1)
+        faces = face_cascade.detectMultiScale(gray, 1.3, 3)
 
 
         for (x, y, w, h) in faces:

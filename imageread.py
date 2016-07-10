@@ -7,14 +7,17 @@ y_dataset = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 def readimages(path):
     x = []
     y = []
-    # y_dataset = np.loadtxt('classfication.txt', unpack=True)
+
     dataList = os.listdir(path)
 
     for dataCount in range(len(dataList)):
+        if (os.path.isdir(path + dataList[dataCount]) == False) :
+            continue
         imageList = os.listdir(path + dataList[dataCount])
         print path + dataList[dataCount]
 
         for imageCount in range(len(imageList)):
+
             image = path + dataList[dataCount] + '/' + imageList[imageCount]
             feed = readimage(image)
             x.append(feed)
